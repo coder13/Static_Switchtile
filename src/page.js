@@ -7,9 +7,12 @@ var util = require('./utils.js');
 module.exports = React.createClass({
 	getInitalState () {
 		return {
-			event: 'single',
-
+			event: 'single'
 		};
+	},
+
+	changedSize (event) {
+		console.log(event);
 	},
 
 	render () {
@@ -28,7 +31,7 @@ module.exports = React.createClass({
 						<td>
 							<input type='checkbox' id='hideStats' onchange='changedHideStats()'> Hide stats</input>
 						</td>
-						<td>Size: <input id='sizeText' size='3' maxlength='3' onchange='changedSize()'/></td>
+						<td>Size: <input id='sizeText' size='3' maxlength='3' onchange={this.changedSize}/></td>
 					</tr>
 					<tr>
 						<td>

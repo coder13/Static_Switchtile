@@ -1,7 +1,7 @@
-require('./main.styl');
+require('./styles/main.styl');
 var React = require('react');
 var App = require('ampersand-app');
-var Puzzle = require('./models/puzzle.js');
+var Puzzle = require('./puzzle.js');
 var util = require('./utils.js');
 var Page = require('./page.js');
 
@@ -13,6 +13,10 @@ var app = window.app = App.extend({
 		this.avgLengths = [5,12,100];
 		this.bestAverages = [[],[],[]];
 		this.browser = util.getBrowser();
+	},
+
+	changedSize(event) {
+		console.log(event);
 	}
 });
 
